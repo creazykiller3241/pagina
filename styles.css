@@ -1,0 +1,217 @@
+/* styles.css */
+
+/* Fondo negro y texto verde para un estilo de hacker/conspiración */
+body {
+    /* Establece la imagen de fondo */
+    background-image: url(https://static.nationalgeographic.es/files/styles/image_3200/public/main_image_galaxies_stephans_quintet_sq_nircam_miri_final-5mb.jpg?w=1600&h=900);
+    
+    /* Asegura que la imagen cubra toda la pantalla */
+    background-size: cover;
+    
+    /* Centra la imagen de fondo */
+    background-position: center;
+    
+    /* Fija la imagen de fondo para que no se mueva al hacer scroll */
+    background-attachment: fixed;
+    
+    /* Opcional: Añade una superposición oscura para mejorar la legibilidad del texto */
+    position: relative;
+    
+    color: rgb(255, 255, 255); /* Texto blanco */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Superposición oscura */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según tus necesidades */
+    z-index: -1; /* Asegura que la superposición esté detrás del contenido */
+}
+
+/* Contenedor principal con fondo semitransparente */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el contenido */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Títulos con efecto de brillo */
+h1 {
+    font-size: 5rem;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    animation: flicker 2s infinite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+}
+
+/* Animación de parpadeo para los títulos */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+/* Estilos para los enlaces */
+a.conspiracy-link {
+    color: #0f0;
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.conspiracy-link:hover {
+    color: #ff0000;
+    transform: scale(1.05);
+}
+
+/* Estilos para las imágenes */
+.conspiracy-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+    border: 2px solid #0f0;
+    box-shadow: 0 0 10px #0f0;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.conspiracy-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0000;
+}
+
+/* Texto debajo de las imágenes */
+.conspiracy-link div {
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #0f0;
+    font-size: 1rem; /* Ajusta el tamaño según tus preferencias */
+}
+
+/* Estilos para el botón "Volver al Inicio" (si lo agregas en el futuro) */
+.btn-warning {
+    background-color: #222;
+    border: 1px solid #0f0;
+    color: #0f0;
+}
+
+.btn-warning:hover {
+    background-color: #333;
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* Ajuste para dispositivos pequeños */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .conspiracy-image {
+        height: 150px; /* Altura más pequeña para móviles */
+    }
+
+    .conspiracy-link div {
+        font-size: 0.9rem; /* Texto un poco más pequeño */
+    }
+}
+
+/* Estilos para las imágenes en las páginas de secciones */
+.img-fluid.my-4 {
+    width: 200%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 600px; /* Altura fija para todas las imágenes, similar al index */
+    object-fit: cover; /* Mantiene la proporción de la imagen y rellena el contenedor */
+    border: 2px solid #0f0; /* Mismo estilo de borde que en el index */
+    box-shadow: 0 0 10px #0f0; /* Mismo efecto de sombra */
+    border-radius: 5px; /* Mismo radio de borde */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.img-fluid.my-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffff;
+}
+
+/* Contenedor del video */
+.video-container {
+    position: fixed; /* Fijo en la ventana del navegador */
+    top: 10px;       /* Ajusta la distancia desde la parte superior */
+    left: 10px;      /* Ajusta la distancia desde la parte izquierda */
+    width: 300px;    /* Ancho del recuadro del video */
+    height: 170px;   /* Alto del recuadro del video */
+    overflow: hidden;/* Oculta cualquier desbordamiento */
+    border: 2px solid #0f0; /* Borde verde para el recuadro */
+    border-radius: 5px;     /* Bordes redondeados */
+    box-shadow: 0 0 10px #0f0; /* Sombra verde */
+    z-index: 1000;          /* Asegura que esté por encima de otros elementos si es necesario */
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+}
+
+/* Estilos para el video */
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor sin distorsionarse */
+}
+
+/* Ajustes responsivos para el video */
+@media (max-width: 767px) {
+    .video-container {
+        width: 200px;  /* Ancho reducido para móviles */
+        height: 113px; /* Alto proporcional */
+        top: 5px;      /* Menor distancia desde la parte superior */
+        left: 5px;     /* Menor distancia desde la parte izquierda */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        width: 150px;  /* Ancho aún más reducido para pantallas pequeñas */
+        height: 85px;  /* Alto proporcional */
+    }
+}
+
+/* Estilos para la sección de comentarios */
+#comments-container {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#comments-container h5 {
+    text-shadow: none;
+}
+
+#comments-container p {
+    color: #fff;
+}
+
+#comment-form .form-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid #0f0;
+}
+
+#comment-form .form-control::placeholder {
+    color: #ccc;
+}
+
+#comment-form .btn-primary {
+    background-color: #0f0;
+    border-color: #0f0;
+    color: #000;
+}
+
+#comment-form .btn-primary:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff;
+}

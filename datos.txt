@@ -1,0 +1,12 @@
+    <!-- Inicializar Firebase -->
+    <script>
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcHl6qerrcSsP5ACIWUf_7VkpT9McE6Kc",
+            authDomain: "pagina-559a6.firebaseapp.com",
+            projectId: "pagina-559a6",
+            storageBucket: "pagina-559a6.firebasestorage.app",
+            messagingSenderId: "650058340639",
+            appId: "1:650058340639:web:c282ebc0d40c43db92382a",
+            measurementId: "G-X2JQT7KP2S"
+        };

@@ -1,0 +1,172 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SHH!!!</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-dark text-light">
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">¡Lo que las élites no quieren que sepas!</h1>
+        <div class="row mt-4 g-4">
+            <div class="col-md-4">
+                <a href="/iluminatis" class="conspiracy-link">
+                    <img src="https://cdn.podimo.com/images/aab88d2d-1a03-4031-9f9e-d946fb09947c_400x400.png"
+                        alt="Los Iluminatis" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Los Iluminatis</div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/microchips" class="conspiracy-link">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP7pKZrr-9rd_sTlA_Gk3nMRjYqjGxjqKqEg&s"
+                        alt="Microchips en las Vacunas" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Microchips en las Vacunas</div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/mutaciones" class="conspiracy-link">
+                    <img src="https://www.immedicohospitalario.es/uploads/2024/01/immedicohospitalario_mutaciones_geneticas_favorecen_43396_04095509.jpg"
+                        alt="Mutaciones Genéticas" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Mutaciones Genéticas</div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/area51" class="conspiracy-link">
+                    <img src="https://www.armytimes.com/resizer/v2/UPAV43VUIVAIVDB4GI2ONXQ4GU.png?width=1200&auth=5e000dfb5f5d19f8cc63e0cd52e1177e24d8c38098e5c57b2a8368f86e2b4b49"
+                        alt="Área 51" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Área 51</div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/911" class="conspiracy-link">
+                    <img src="https://cdn.britannica.com/33/129733-050-AF95D301/Smoke-flames-twin-towers-attacks-World-Trade-September-11-2001.jpg"
+                        alt="Atentados del 9/11" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Atentados del 9/11</div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/terraplanismo" class="conspiracy-link">
+                    <img src="https://www.sinpermiso.info/sites/default/files/styles/large/public/terra.jpg?itok=nvHVyHyX"
+                        alt="Terraplanismo" class="img-fluid conspiracy-image">
+                    <div class="mt-2">Terraplanismo</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center">¿QUIÉNES SOMOS?</h1>
+    <p class="text-center mt-3">
+        Somos UNQ, una organización dedicada a desentrañar las verdades ocultas que, según nuestra investigación, los
+        gobiernos y las instituciones poderosas han mantenido en secreto. Creemos que la transparencia y el acceso a la
+        información son fundamentales para una sociedad libre y consciente, y nos comprometemos a exponer aquello que
+        consideramos ha sido deliberadamente escondido al público.
+    </p>
+
+    <!-- Sección de comentarios -->
+    <div class="container mt-5">
+        <h2 class="text-center">Comentarios</h2>
+        <form id="comment-form" class="mt-4">
+            <div class="mb-3">
+                <label for="username" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="username" placeholder="Tu nombre (opcional)">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Comentario:</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu comentario aquí..."
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <hr>
+
+        <div id="comments-container" class="mt-4">
+            <!-- Los comentarios se mostrarán aquí -->
+        </div>
+    </div>
+
+    <!-- Firebase JS SDK -->
+    <!-- Asegúrate de que las versiones de los SDK coincidan con las que estás usando -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- Inicializar Firebase -->
+    <script>
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcHl6qerrcSsP5ACIWUf_7VkpT9McE6Kc",
+            authDomain: "pagina-559a6.firebaseapp.com",
+            databaseURL: "https://pagina-559a6-default-rtdb.firebaseio.com",
+            projectId: "pagina-559a6",
+            storageBucket: "pagina-559a6.appspot.com",
+            messagingSenderId: "650058340639",
+            appId: "1:650058340639:web:c282ebc0d40c43db92382a",
+            measurementId: "G-X2JQT7KP2S"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Referencia a la base de datos
+        const commentsRef = database.ref('comments');
+
+        // Escuchar el evento de envío del formulario
+        document.getElementById('comment-form').addEventListener('submit', submitComment);
+
+        function submitComment(e) {
+            e.preventDefault();
+
+            // Obtener valores de los campos
+            const username = document.getElementById('username').value || 'Anónimo';
+            const message = document.getElementById('message').value;
+
+            // Crear un nuevo comentario en la base de datos
+            const newCommentRef = commentsRef.push();
+            newCommentRef.set({
+                username: username,
+                message: message,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            });
+
+            // Limpiar el formulario
+            document.getElementById('comment-form').reset();
+        }
+
+        // Escuchar nuevos comentarios y agregarlos al contenedor
+        commentsRef.on('child_added', function (data) {
+            const comment = data.val();
+            displayComment(comment.username, comment.message, comment.timestamp);
+        });
+
+        function displayComment(username, message, timestamp) {
+            const commentsContainer = document.getElementById('comments-container');
+
+            // Crear elementos para mostrar el comentario
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('mb-3', 'p-3', 'bg-secondary', 'bg-opacity-50', 'rounded');
+
+            const commentHeader = document.createElement('h5');
+            commentHeader.textContent = username + ' - ' + new Date(timestamp).toLocaleString();
+            commentHeader.classList.add('text-info');
+
+            const commentMessage = document.createElement('p');
+            commentMessage.textContent = message;
+
+            // Agregar elementos al contenedor
+            commentDiv.appendChild(commentHeader);
+            commentDiv.appendChild(commentMessage);
+            commentsContainer.prepend(commentDiv); // Agrega el comentario al principio
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
