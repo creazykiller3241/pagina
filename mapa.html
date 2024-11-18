@@ -8,21 +8,23 @@
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Contenedor del video */
+        /* Video container */
         .video-container {
-            margin-bottom: 20px; /* Espaciado entre videos */
-            max-width: 640px; /* Tamaño máximo para los videos */
+            max-width: 100%; /* Asegura que no exceda el contenedor */
             width: 100%; /* Responsivo */
+            max-width: 640px; /* Tamaño máximo del video */
+            aspect-ratio: 16/9; /* Mantiene la proporción 16:9 */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
             border: 2px solid #0f0; /* Borde verde */
             border-radius: 5px; /* Bordes redondeados */
-            overflow: hidden; /* Oculta contenido fuera del contenedor */
-            background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            overflow: hidden; /* Oculta contenido desbordado */
         }
 
+        .video-container iframe,
         .video-container video {
-            width: 100%; /* Ajusta al ancho del contenedor */
-            height: auto; /* Mantiene la proporción */
-            border: none; /* Sin bordes */
+            width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
+            height: 100%; /* Ajusta la altura al contenedor */
+            border: none; /* Sin bordes adicionales */
         }
     </style>
 </head>
@@ -34,66 +36,73 @@
         <!-- Sección de videos -->
         <div class="row justify-content-center">
             <!-- Video 1 -->
-            <div class="col-md-6 video-container">
-                <video controls>
-                    <source src="videos/liliana.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/liliana.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
             </div>
 
             <!-- Video 2 -->
-            <div class="col-md-6 video-container">
-                <video controls>
-                    <source src="videos/adriayenlis.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/adriayenlis.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
             </div>
 
             <!-- Video 3 -->
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/lJCSSK3FWFo" 
-                    title="Video de ejemplo"
-                    width="800" 
-                    height="450" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/lJCSSK3FWFo" 
+                        title="Video de ejemplo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-            
 
             <!-- Video 4 -->
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/Do7ihaPzgmQ" 
-                    title="Video de ejemplo"
-                    width="800" 
-                    height="450" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Do7ihaPzgmQ" 
+                        title="Video de ejemplo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-            
-            <!-- Video 5 -->
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/jpdWHlqys8U" 
-                    title="Video de ejemplo"
-                    width="800" 
-                    height="450" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
 
+            <!-- Video 5 -->
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/jpdWHlqys8U" 
+                        title="Video de ejemplo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-            <div class="col-md-6 video-container">
-                <video controls>
-                    <source src="videos/mayorga.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
+
+            <!-- Video 6 -->
+            <div class="col-12 col-md-6 d-flex justify-content-center mb-4">
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/mayorga.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

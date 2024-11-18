@@ -230,3 +230,34 @@ a.conspiracy-link:hover {
     width: 100%; /* Imágenes más anchas en móviles */
   }
 }
+
+.video-container {
+    max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.video-player {
+    width: 100%; /* El video ocupa todo el ancho disponible */
+    max-width: 600px; /* Establece un límite máximo para pantallas grandes */
+    height: auto; /* Mantiene la proporción del video */
+}
+
+
+/* Video container */
+.video-container {
+    max-width: 100%; /* Asegura que no exceda el contenedor */
+    width: 100%; /* Responsivo */
+    max-width: 640px; /* Tamaño máximo del video */
+    aspect-ratio: 16/9; /* Mantiene la proporción 16:9 */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    border: 2px solid #0f0; /* Borde verde */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido desbordado */
+}
+
+.video-container iframe,
+.video-container video {
+    width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
+    height: 100%; /* Ajusta la altura al contenedor */
+    border: none; /* Sin bordes adicionales */
+}
