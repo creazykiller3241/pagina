@@ -60,7 +60,7 @@ h1 {
 
 /* Estilos para los enlaces */
 a.conspiracy-link {
-    color: #0f0;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: transform 0.2s, color 0.2s;
     display: flex;
@@ -78,8 +78,8 @@ a.conspiracy-link:hover {
     width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
     height: 200px; /* Altura fija para todas las imágenes */
     object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
-    border: 2px solid #0f0;
-    box-shadow: 0 0 10px #0f0;
+    border: 2px solid rgb(11, 250, 2);
+    box-shadow: 0 0 10px rgb(9, 255, 0);
     border-radius: 5px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -130,8 +130,8 @@ a.conspiracy-link:hover {
     width: 200%; /* La imagen ocupará el 100% del ancho del contenedor */
     height: 600px; /* Altura fija para todas las imágenes, similar al index */
     object-fit: cover; /* Mantiene la proporción de la imagen y rellena el contenedor */
-    border: 2px solid #0f0; /* Mismo estilo de borde que en el index */
-    box-shadow: 0 0 10px #0f0; /* Mismo efecto de sombra */
+    border: 2px solid #02ff41; /* Mismo estilo de borde que en el index */
+    box-shadow: 0 0 10px rgb(9, 255, 0); /* Mismo efecto de sombra */
     border-radius: 5px; /* Mismo radio de borde */
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -149,7 +149,7 @@ a.conspiracy-link:hover {
     margin: 0 auto; /* Centrado automático */
     max-width: 640px; /* Tamaño máximo para el ancho del contenedor */
     width: 100%; /* Ocupa todo el ancho disponible dentro del máximo */
-    border: 2px solid #0f0; /* Borde verde para diseño */
+    border: 2px solid rgb(0, 255, 21); /* Borde verde para diseño */
     border-radius: 5px; /* Bordes redondeados */
     overflow: hidden; /* Oculta cualquier contenido desbordado */
     background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
@@ -184,7 +184,7 @@ a.conspiracy-link:hover {
 #comment-form .form-control {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    border: 1px solid #0f0;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 #comment-form .form-control::placeholder {
@@ -192,8 +192,8 @@ a.conspiracy-link:hover {
 }
 
 #comment-form .btn-primary {
-    background-color: #0f0;
-    border-color: #0f0;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
     color: #000;
 }
 
@@ -208,8 +208,8 @@ a.conspiracy-link:hover {
   width: 75%; /* Aumenta el ancho de las imágenes para mostrarlas mejor */
   height: auto; /* Permite que la altura se ajuste proporcionalmente */
   object-fit: cover; /* Mantiene la proporción de la imagen y rellena el contenedor */
-  border: 2px solid #0f0; /* Mismo estilo de borde */
-  box-shadow: 0 0 5px #0f0; /* Sombra más sutil */
+  border: 2px solid rgb(255, 255, 255); /* Mismo estilo de borde */
+  box-shadow: 0 0 5px rgb(255, 255, 255); /* Sombra más sutil */
   border-radius: 5px; /* Mismo radio de borde */
   transition: transform 0.2s, box-shadow 0.2s;
   margin-bottom: 10px; /* Añade espacio entre las imágenes */
@@ -250,7 +250,7 @@ a.conspiracy-link:hover {
     max-width: 640px; /* Tamaño máximo del video */
     aspect-ratio: 16/9; /* Mantiene la proporción 16:9 */
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-    border: 2px solid #0f0; /* Borde verde */
+    border: 2px solid rgb(255, 255, 255); /* Borde verde */
     border-radius: 5px; /* Bordes redondeados */
     overflow: hidden; /* Oculta contenido desbordado */
 }

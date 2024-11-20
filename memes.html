@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMERESTRES</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,49 +14,44 @@
 <body class="bg-dark text-light">
     <div class="container text-center mt-5">
         <h1 class="mb-4">MOMAZOS ÉPICOS</h1>
-        <div class="container text-center mt-5">
-        <div class="row mt-4 g-4">
-            <div class="col-md-4">
-                    <img src="https://fotos.perfil.com//2023/09/14/900/0/de-los-simpson-a-et-memes-y-burlas-por-la-exposicion-de-extraterrestres-en-mexico-g20230913-1653681.jpg"
-                        alt="Los Iluminatis" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://eldoce.tv/resizer/v2/los-mejores-memes-sobre-la-supuesta-invasion-extraterrestre-que-es-viral-VDDOWJVV3ZDY3JUSQPZOIYBJEQ.jpg?auth=8047335f041ac5b6d6928094e1f4267407e92c7a77ec897bca60d5c27d3bddc4&width=767"
-                        alt="Microchips en las Vacunas" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="images\meme 1.jpg"
-                        alt="Mutaciones Genéticas" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOJDBUfITPQa_gLuAMrjD6cEsUo8C0O63-QQ&s"
-                        alt="Área 51" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://statics.memondo.com/p/s1/ccs/2023/07/CC_2801897_38f0e6f063ad4a0bb810319bdc420e68_meme_otros_teoricos_de_la_conspiracion.jpg?cb=715994"
-                        alt="Atentados del 9/11" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8yfFln21ddpb5SL0fFEf_zKUKQKusr88NAQ&s"
-                        alt="Terraplanismo" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://resizer.glanacion.com/resizer/v2/los-memes-estallaron-en-las-redes-sociales-45D7R2PX3FA73DDNTHHVMRTO5I.jpg?auth=c3b557f8e344fbf5ac24ece80fcbc4a6b601c2b74bd2d06b2ad853fe8630b46e&width=420&height=280&quality=70&smart=true"
-                        alt="Vida Extraterrestre" class="img-fluid meme-image">
-                </a>
-            </div>
-            <div class="col-md-4">
-                    <img src="https://i.pinimg.com/236x/36/92/e2/3692e2ab5a2a88c6da9fe63c609b1fcc.jpg"
-                        alt="Momazos" class="img-fluid meme-image">
-                </a>
-            </div>
+        <div class="row mt-4 g-4" id="meme-container">
+            <!-- Los memes se generarán dinámicamente aquí -->
+        </div>
+    </div>
 
+    <script>
+        // Array de URLs de imágenes de memes
+        const memes = [
+            "https://fotos.perfil.com//2023/09/14/900/0/de-los-simpson-a-et-memes-y-burlas-por-la-exposicion-de-extraterrestres-en-mexico-g20230913-1653681.jpg",
+            "https://imagenes.eltiempo.com/files/image_414_314/uploads/2019/10/04/5d973beb0aae1.png",
+            "https://statics.memondo.com/p/s1/ccs/2021/10/CC_2787238_7524450df3e7424886966fe430b5b672_meme_otros_jaque_mate_conspiranoico.jpg?cb=3262957",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOJDBUfITPQa_gLuAMrjD6cEsUo8C0O63-QQ&s",
+            "https://statics.memondo.com/p/s1/ccs/2023/07/CC_2801897_38f0e6f063ad4a0bb810319bdc420e68_meme_otros_teoricos_de_la_conspiracion.jpg?cb=715994",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8yfFln21ddpb5SL0fFEf_zKUKQKusr88NAQ&s",
+            "https://resizer.glanacion.com/resizer/v2/los-memes-estallaron-en-las-redes-sociales-45D7R2PX3FA73DDNTHHVMRTO5I.jpg?auth=c3b557f8e344fbf5ac24ece80fcbc4a6b601c2b74bd2d06b2ad853fe8630b46e&width=420&height=280&quality=70&smart=true",
+            "https://www.latercera.com/resizer/v2/QMUWC7HFZ5D7BGHSMWI5PW75XE.jpg?quality=80&smart=true&auth=04f32083fde632df7e0d850116daf6ed8070964b853ac95ecedd2566a159cc0d&width=690&height=502"
+        ];
+
+        // Seleccionar memes aleatorios
+        function getRandomMemes(num) {
+            const shuffled = memes.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        // Renderizar los memes en la página
+        function renderMemes() {
+            const memeContainer = document.getElementById('meme-container');
+            const randomMemes = getRandomMemes(6); // Selecciona 6 memes aleatorios
+            memeContainer.innerHTML = randomMemes.map(url => `
+                <div class="col-md-4">
+                    <img src="${url}" alt="Meme alienígena" class="img-fluid meme-image">
+                </div>
+            `).join('');
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', renderMemes);
+    </script>
 </body>
 
 </html>
